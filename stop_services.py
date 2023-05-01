@@ -9,7 +9,7 @@ RED = '\033[31m'
 RESET = "\033[0m"
 
 # Replace with the names of the containers you want to stop
-container_names = ['elasticsearch-main', 'kb-container', 'mailhog', 'mariadb', 'phpmyadmin', 'portainer', 'traefik', 'smartycms_app']
+container_names = ['elasticsearch-main', 'kb-container', 'mailhog', 'mariadb', 'phpmyadmin', 'portainer', 'traefik']
 
 # Stop specific containers using the command line
 for container_name in container_names:

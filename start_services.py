@@ -21,7 +21,7 @@ url_1 = 'https://WEBSITE_ADDRESS_1/'
 url_2 = 'https://WEBSITE_ADDRESS_2/'
 
 # Replace with the names of the containers you want to start
-container_names = ['elasticsearch-main', 'kb-container', 'mailhog', 'mariadb', 'phpmyadmin', 'portainer', 'traefik', 'smartycms_app', 'wowtea_app']
+container_names = ['elasticsearch-main', 'kb-container', 'mailhog', 'mariadb', 'phpmyadmin', 'portainer', 'traefik']
 
 # Check if containers are already running
 running_containers = subprocess.run(["docker", "ps", "--format", "{{.Names}}"], capture_output=True, text=True).stdout.strip().split('\n')

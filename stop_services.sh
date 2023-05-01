@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 /home/mnestorov/Documents/Automation/stop_services.py
+python3 /home/YOU_USERNAME/Documents/Automation/stop_services.py
