@@ -3,21 +3,25 @@ import time
 from selenium import webdriver
 
 # Define ANSI escape sequences for color formatting
-YELLOW = "\033[93m"
-BLUE = "\033[94m"
+YELLOW = '\033[93m'
+BLUE = '\033[94m'
 GREEN = '\033[32m'
 RED = '\033[31m'
-RESET = "\033[0m"
+RESET = '\033[0m'
+
+# SSH connection details
+ssh_host = "root@SERVER_IP_ADDRESS"
+ssh_password = "PASSWORD"
 
 # Set the Slack app path
 slack_app = '/usr/bin/slack'
 
 # Set the URLs you want to open
-url_1 = 'https://smartycms.localhost/'
-url_2 = 'https://phpmyadmin.localhost/'
+url_1 = 'https://WEBSITE_ADDRESS_1/'
+url_2 = 'https://WEBSITE_ADDRESS_2/'
 
 # Replace with the names of the containers you want to start
-container_names = ['elasticsearch-main', 'kb-container', 'mailhog', 'mariadb', 'phpmyadmin', 'portainer', 'traefik', 'smartycms_app']
+container_names = ['elasticsearch-main', 'kb-container', 'mailhog', 'mariadb', 'phpmyadmin', 'portainer', 'traefik', 'smartycms_app', 'wowtea_app']
 
 # Check if containers are already running
 running_containers = subprocess.run(["docker", "ps", "--format", "{{.Names}}"], capture_output=True, text=True).stdout.strip().split('\n')
@@ -72,6 +76,11 @@ subprocess.run(["/snap/bin/slack"])
 
 # Print a success message
 print(f"{GREEN}Slack loaded successfully!{RESET}")
+
+# Start Ubuntu terminal and connect via SSH
+print(f"{YELLOW}Starting Ubuntu terminal and connecting via SSH to {ssh_host}...{RESET}")
+subprocess.Popen(["gnome-terminal", "--", "bash", "-c", f"sshpass -p {ssh_password} ssh {ssh_host}; exec bash"])
+print(f"{GREEN}SSH connection to {ssh_host} established successfully!{RESET}")
 
 # The browser will now stay open until you manually stop the script
 while True:

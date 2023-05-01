@@ -9,6 +9,22 @@ This is a Docker automation script build with Python that automates the start an
 - Chrome browser
 - Slack app
 
+**Also make sure you have Selenium and the appropriate WebDriver for your browser (e.g., ChromeDriver for Chrome) installed.**
+
+To install Selenium, run this command:
+
+```
+pip install selenium
+```
+
+If you want to execute the `ssh` command with a `password`, you can use `sshpass`. 
+
+You'll need to install it first using the following command in your terminal:
+
+```
+sudo apt-get install sshpass
+```
+
 ## Installation
 
 1. Clone the repository to your local machine.
