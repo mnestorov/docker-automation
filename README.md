@@ -9,22 +9,6 @@ This is a Docker automation script build with Python that automates the start an
 - Chrome browser
 - Slack app
 
-**Also make sure you have Selenium and the appropriate WebDriver for your browser (e.g., ChromeDriver for Chrome) installed.**
-
-To install Selenium, run this command:
-
-```
-pip install selenium
-```
-
-If you want to execute the `ssh` command with a `password`, you can use `sshpass`. 
-
-You'll need to install it first using the following command in your terminal:
-
-```
-sudo apt-get install sshpass
-```
-
 ## Installation
 
 1. Clone the repository to your local machine.
@@ -37,6 +21,31 @@ sudo apt-get install sshpass
 python3 start_services.py
 ```
 
+**Also we need to install the python3-pip package.**
+
+Open a terminal and run the following command:
+
+```
+sudo apt update
+sudo apt install python3-pip
+```
+
+**Also make sure you have Selenium and the appropriate WebDriver for your browser (e.g., ChromeDriver for Chrome) installed.**
+
+To install Selenium, run this command:
+
+```
+pip3 install selenium
+```
+
+**If you want to execute the `ssh` command with a `password`, you can use `sshpass`.**
+
+You'll need to install it first using the following command in your terminal:
+
+```
+sudo apt-get install sshpass
+```
+
 ## Usage
 
 When you run the Python script, it will automatically start the Docker containers listed in the `container_names` array, launch Chrome in incognito mode with the URLs specified in `url_1` and `url_2`, and open the Slack app.
@@ -45,7 +54,9 @@ To stop the automation, simply press `CTRL+C` in the terminal.
 
 # Bash Automation Script
 
-This is a Bash script that automates the start of the Python automation script.
+This is a Bash script that automates the start of the Python automation script. 
+
+We need to make the Bash script executable by running:
 
 ```
 chmod +x start_services.sh
