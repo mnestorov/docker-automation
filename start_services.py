@@ -15,8 +15,7 @@ for container_name in container_names:
         subprocess.run(["docker", "start", container_name])
         time.sleep(1)
         print(f"{BLUE}Container {container_name} started successfully!{RESET}")
-    
-# Print a success message after all containers have started
+        
 print(f"{GREEN}All containers started successfully!{RESET}")
 
 # Set up ChromeOptions to launch Chrome in incognito mode
@@ -48,16 +47,13 @@ driver.maximize_window()
 if len(driver.window_handles) > 2:
     driver.switch_to.window(driver.window_handles[2])
     driver.close()
-    
-# Print a success message
+
 print(f"{GREEN}{url_1} and {url_2} loaded successfully in the browser!{RESET}")
 
 # Start Slack
 time.sleep(1)
 print(f"{YELLOW}Starting the Slack app...{RESET}")
 subprocess.run([slack_app])  
-
-# Print a success message
 print(f"{GREEN}Slack loaded successfully!{RESET}")
 
 # Start Ubuntu terminal and connect via SSH
