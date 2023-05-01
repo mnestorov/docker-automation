@@ -95,7 +95,7 @@ To run the script at startup on Ubuntu 22.04, you have a few options.
 
 - Open the "Startup Applications" tool by searching for it in the Activities overview or running gnome-session-properties in the terminal.
 - Click the "Add" button.
-- Fill in the "Name" field (e.g., "Start Portainer and phpMyAdmin").
+- Fill in the "Name" field (e.g., "Start Services").
 - In the "Command" field, enter the full path to the start_services.sh script (e.g., /home/yourusername/start_services.sh).
 - Click "Add" and close the "Startup Applications" tool.
 
