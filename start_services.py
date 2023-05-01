@@ -3,9 +3,6 @@ import time
 from selenium import webdriver
 from config import (ssh_host, ssh_password, slack_app, phpstorm_path, url_1, url_2, YELLOW, BLUE, GREEN, RED, RESET, container_names)
 
-# Your main script code
-
-
 # Check if containers are already running
 running_containers = subprocess.run(["docker", "ps", "--format", "{{.Names}}"], capture_output=True, text=True).stdout.strip().split('\n')
 
