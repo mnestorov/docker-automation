@@ -1,6 +1,6 @@
 # Docker Automation Script with Python
 
-This is a Docker automation script build with Python that automates the start and stop of specific Docker (Portainer) containers, launches Chrome in incognito mode with two URLs, and opens the Slack app.
+This is a Docker automation script build with Python that automates the start and stop of specific Docker (Portainer) containers, launches Chrome in incognito mode with two URLs, opens the Slack app, loading Ubuntu terminal and SSH login to the server.
 
 ## Prerequisites
 
