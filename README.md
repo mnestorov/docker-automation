@@ -8,7 +8,7 @@ This is a Docker **workflow automation script** build with Python that automates
 - Open the PhpStorm app
 - Loading Ubuntu terminal and SSH login to the remote server.
 
-**Note:** For this automation script to work is requred to use [Docker Web Server for Ubuntu 22.04](https://github.com/mnestorov/laravel-docker-web-server) and [Docker Container for Laravel 8+ and PHP 8.0 With Apache Web Server](https://github.com/mnestorov/laravel-project-container)
+**Note:** For this automation script to work is requred to use [Docker Local Web Server](https://github.com/mnestorov/docker-local-web-server) and [Docker Project Container with PHP 8+ and Apache](https://github.com/mnestorov/docker-poject-container)
 
 ## Prerequisites
 
@@ -104,10 +104,10 @@ To run the script at startup on Ubuntu 22.04, you have a few options.
 - Open the "Startup Applications" tool by searching for it in the Activities overview or running `gnome-session-properties` in the terminal.
 - Click the "Add" button.
 - Fill in the "Name" field (e.g., "Start Services").
-- In the "Command" field, enter the full path to the start_services.sh script (e.g., /home/yourusername/start_services.sh).
+- In the "Command" field, enter the full path to the start_services.sh script (e.g., `/home/YOUR_USERNAME/path/to/script/start_services.sh`).
 - Click "Add" and close the "Startup Applications" tool.
 
-Now, the Bash script will run automatically when you log in to your Ubuntu 22.04 system, starting the Python script that opens the browser and logs into Portainer and phpMyAdmin.
+Now, the bash script will run automatically when you log in to your Ubuntu system, starting the Python script that start Docker containers, start Slack and PhpStorm apps and opens the browser and loading two web pages, specified at the `config.py` file.
 
 Please note that this approach will only work when you log in with a graphical environment, as it relies on the GNOME startup applications feature. If you need to run the script in a non-GUI environment or before user login, you may need to use a different method, such as a systemd service or a cron job.
 
@@ -122,5 +122,5 @@ Please note that this approach will only work when you log in with a graphical e
 
 ## Links
 
-- [Docker Web Server for Ubuntu 22.04](https://github.com/mnestorov/laravel-docker-web-server)
-- [Docker Container for Laravel 8+ and PHP 8.0 With Apache Web Server](https://github.com/mnestorov/laravel-project-container)
+- [Docker Local Web Server](https://github.com/mnestorov/docker-local-web-server)
+- [Docker Project Container with PHP 8+ and Apache](https://github.com/mnestorov/docker-poject-container)
