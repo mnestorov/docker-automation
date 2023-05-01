@@ -71,7 +71,6 @@ print(f"{YELLOW}Starting PhpStorm...{RESET}")
 subprocess.Popen([phpstorm_path])
 print(f"{GREEN}PhpStorm started successfully!{RESET}")
 
-
 # The browser will now stay open until you manually stop the script
 while True:
     try:
