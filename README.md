@@ -1,6 +1,14 @@
 # Docker Automation Script with Python
 
-This is a Docker automation script build with Python that automates the start and stop of specific Docker (Portainer) containers, launches Chrome in incognito mode with two URLs, opens the Slack and PhpStorm apps, loading Ubuntu terminal and SSH login to the remote server.
+This is a Docker **workflow automation script** build with Python that automates the start and stop of specific tasks like:
+
+- Start the Docker (Portainer) containers *
+- Launches Chrome in incognito mode with two URLs
+- Opens the Slack app
+- Open the PhpStorm app
+- Loading Ubuntu terminal and SSH login to the remote server.
+
+**Note:** For this automation script to work is requred to use [Docker Web Server for Ubuntu 22.04](https://github.com/mnestorov/laravel-docker-web-server) and [Docker Container for Laravel 8+ and PHP 8.0 With Apache Web Server](https://github.com/mnestorov/laravel-project-container)
 
 ## Prerequisites
 
