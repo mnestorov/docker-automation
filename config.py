@@ -3,7 +3,7 @@ ssh_host = "USER@YOUR_SERVER_IP_ADDRESS"
 ssh_password = "YOUR_USER_PASSWORD"
 
 # Set the Slack app path
-slack_app = '/usr/bin/slack'
+slack_app = '/snap/bin/slack'
 
 # Set the PhpStorm path
 phpstorm_path = '/snap/bin/phpstorm'
@@ -28,6 +28,6 @@ container_names = [
     'phpmyadmin', 
     'portainer', 
     'traefik', 
-
+    
     'another_app'
 ]

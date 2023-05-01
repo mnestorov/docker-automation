@@ -55,7 +55,7 @@ print(f"{GREEN}{url_1} and {url_2} loaded successfully in the browser!{RESET}")
 # Start Slack
 time.sleep(1)
 print(f"{YELLOW}Starting the Slack app...{RESET}")
-subprocess.run(["/snap/bin/slack"])  
+subprocess.run([slack_app])  
 
 # Print a success message
 print(f"{GREEN}Slack loaded successfully!{RESET}")

@@ -1,5 +1,6 @@
 import subprocess
 import time
+from config import (YELLOW, BLUE, GREEN, RED, RESET, container_names)
 
 # Define ANSI escape sequences for color formatting
 YELLOW = "\033[93m"
@@ -7,9 +8,6 @@ BLUE = "\033[94m"
 GREEN = '\033[32m'
 RED = '\033[31m'
 RESET = "\033[0m"
-
-# Replace with the names of the containers you want to stop
-container_names = ['elasticsearch-main', 'kb-container', 'mailhog', 'mariadb', 'phpmyadmin', 'portainer', 'traefik', 'smartycms_app', 'wowtea_app']
 
 # Check if containers are already running
 running_containers = subprocess.run(["docker", "ps", "--format", "{{.Names}}"], capture_output=True, text=True).stdout.strip().split('\n')
