@@ -1,27 +1,10 @@
 import subprocess
 import time
 from selenium import webdriver
+from config import (ssh_host, ssh_password, slack_app, phpstorm_path, url_1, url_2, YELLOW, BLUE, GREEN, RED, RESET, container_names)
 
-# Define ANSI escape sequences for color formatting
-YELLOW = '\033[93m'
-BLUE = '\033[94m'
-GREEN = '\033[32m'
-RED = '\033[31m'
-RESET = '\033[0m'
+# Your main script code
 
-# SSH connection details
-ssh_host = "root@SERVER_IP_ADDRESS"
-ssh_password = "PASSWORD"
-
-# Set the Slack app path
-slack_app = '/usr/bin/slack'
-
-# Set the URLs you want to open
-url_1 = 'https://WEBSITE_ADDRESS_1/'
-url_2 = 'https://WEBSITE_ADDRESS_2/'
-
-# Replace with the names of the containers you want to start
-container_names = ['elasticsearch-main', 'kb-container', 'mailhog', 'mariadb', 'phpmyadmin', 'portainer', 'traefik']
 
 # Check if containers are already running
 running_containers = subprocess.run(["docker", "ps", "--format", "{{.Names}}"], capture_output=True, text=True).stdout.strip().split('\n')
@@ -36,6 +19,9 @@ for container_name in container_names:
         time.sleep(1)
         print(f"{BLUE}Container {container_name} started successfully!{RESET}")
     
+# Print a success message after all containers have started
+print(f"{GREEN}All containers started successfully!{RESET}")
+
 # Set up ChromeOptions to launch Chrome in incognito mode
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--incognito")
@@ -69,7 +55,7 @@ if len(driver.window_handles) > 2:
 # Print a success message
 print(f"{GREEN}{url_1} and {url_2} loaded successfully in the browser!{RESET}")
 
-# Launch the Slack app
+# Start Slack
 time.sleep(1)
 print(f"{YELLOW}Starting the Slack app...{RESET}")
 subprocess.run(["/snap/bin/slack"])  
@@ -81,6 +67,13 @@ print(f"{GREEN}Slack loaded successfully!{RESET}")
 print(f"{YELLOW}Starting Ubuntu terminal and connecting via SSH to {ssh_host}...{RESET}")
 subprocess.Popen(["gnome-terminal", "--", "bash", "-c", f"sshpass -p {ssh_password} ssh {ssh_host}; exec bash"])
 print(f"{GREEN}SSH connection to {ssh_host} established successfully!{RESET}")
+
+# Start PhpStorm
+time.sleep(1)
+print(f"{YELLOW}Starting PhpStorm...{RESET}")
+subprocess.Popen([phpstorm_path])
+print(f"{GREEN}PhpStorm started successfully!{RESET}")
+
 
 # The browser will now stay open until you manually stop the script
 while True:
