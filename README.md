@@ -1,5 +1,7 @@
 # Docker Workflow Automation Script
 
+## Overview
+
 This is a Docker **workflow automation script** build with Python that automates the start and stop of specific tasks like:
 
 - Start the Docker (Portainer) containers *
@@ -59,7 +61,7 @@ sudo apt-get install sshpass
 
 ## Usage
 
-When you run the Python script, it will automatically start the Docker containers listed in the `container_names` array, launch Chrome in incognito mode with the URLs specified in `url_1` and `url_2`, and open the Slack app.
+When you run the Python script, it will automatically start the Docker containers listed in the **container_names** array, launch Chrome in incognito mode with the URLs specified in **url_1** and **url_2**, and open the Slack app.
 
 To stop the automation, simply press `CTRL+C` in the terminal.
 
@@ -116,11 +118,24 @@ Please note that this approach will only work when you log in with a graphical e
 **If you encounter any issues while running the script, check the following:**
 
 - Ensure that Docker, Python 3.x, the Chrome browser, the Slack app, and the PhpStorm are installed correctly.
-- Check that the Docker containers specified in `container_names` are correct and running.
-- Check that the URLs specified in `url_1` and `url_2` are correct.
+- Check that the Docker containers specified in **container_names** are correct and running.
+- Check that the URLs specified in **url_1** and **url_2** are correct.
 - If Slack does not open, check that the path to the Slack app is correct.
 
-## Links
+## TODO
+
+- Add functionality to check if the required Docker images are available, and if not, download them.
+- Add a feature to automatically download and install the required versions of Chrome and ChromeDriver.
+- Add the ability to start and stop the Docker containers with a single command, instead of running separate Python scripts for each.
+- Add support for more web browsers, such as Firefox or Edge.
+- Implement error handling and logging to make it easier to debug issues.
+- Create a command-line interface to make it more user-friendly and configurable.
+- Add the ability to run tests or automated tasks on the loaded web pages.
+- Add the ability to configure and use multiple profiles in the web browsers.
+- Integrate with a Continuous Integration (CI) tool, such as Jenkins or Travis CI, to automate testing and deployment.
+- Implement a scheduling feature to automatically run the script at specified intervals.
+
+## Docker Server and Project Container Repositories
 
 - [Docker Local Web Server](https://github.com/mnestorov/docker-local-web-server)
 - [Docker Project Container with PHP 8+ and Apache](https://github.com/mnestorov/docker-poject-container)
