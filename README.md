@@ -139,3 +139,7 @@ Please note that this approach will only work when you log in with a graphical e
 
 - [Docker Local Web Server](https://github.com/mnestorov/docker-local-web-server)
 - [Docker Project Container with PHP 8+ and Apache](https://github.com/mnestorov/docker-poject-container)
+
+## License
+
+This project is licensed under the MIT License.
