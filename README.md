@@ -1,5 +1,7 @@
 # Docker Workflow Automation Script
 
+[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
+
 ## Overview
 
 This is a Docker **workflow automation script** build with Python that automates the start and stop of specific tasks like:
