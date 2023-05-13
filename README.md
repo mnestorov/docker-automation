@@ -124,7 +124,7 @@ Please note that this approach will only work when you log in with a graphical e
 - Check that the URLs specified in **url_1** and **url_2** are correct.
 - If Slack does not open, check that the path to the Slack app is correct.
 
-## TODO
+## TODOs
 
 - Add functionality to check if the required Docker images are available, and if not, download them.
 - Add a feature to automatically download and install the required versions of Chrome and ChromeDriver.
